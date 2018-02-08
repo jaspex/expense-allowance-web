@@ -11,6 +11,8 @@ app.get('/', (request, response) => {
     response.send('<p>Hello world!</p>');
 })
 
-app.listen(3000, () => {
-    console.log('Started Express on Port 3000');
+// Move this to config file
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Started Express on port ${port}`);
 })
